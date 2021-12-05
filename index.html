@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My NEW game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="l.gif" type="image/x-icon">
+</head>
+
+<body >
+
+
+
+
+    <h1>
+        <center>THE BRICK FALL</center>
+    <h1>
+
+        <h1>
+            <center>
+                  Score : <span id="scorevalue">Value</span>
+
+            </center>
+        </h1>
+            
+        <hr id="hr">
+<div id="mainblock">
+<div onclick="block()" class="block" id="block1"></div>
+<div onclick="block()" class="block" id="block2"></div>
+<div onclick="block()" class="block" id="block3"></div>
+<div onclick="block()" class="block" id="block5"></div>
+<div onclick="block()" class="block" id="block3"></div>
+<div onclick="block()" class="block" id="block4"></div>
+<div onclick="block()" class="block" id="block5"></div>
+
+<img id="lambo" class="lambo" src="l-unscreen.gif" height="200px" width="150px" alt="car">
+</div>
+
+<div id="startdiv">
+<center>
+    <button id="startbtn" onclick="quit()">Quit</button><h2>The game</h2>
+</center>
+</div>
+
+
+
+<div id="thumb">
+ 
+    <div id="game">
+        <h1>The Lambo</h1>
+    </div>
+
+<div id="info">
+<h1>Developer : S.Surya</h1>
+<h2>source code : github @programmersurya</h2>
+<h3>About game : Just a simple car game made to play <br> &#8594; Take the car <br> &#8594; Play with the arrow <br>&#8594; Cross the Obstacle <br>&#8594; Make SCORE</h3>
+</div>
+
+
+<button id="s"  onclick="s() , car()">START</button>
+</div>
+
+</body>
+
+<!-- /////////////////////// --> 
+<!-- LLLOOOGGGIIICCC -->
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function s(){
+
+    document.getElementById("thumb").style.display = "none";
+}
+
+
+
+function quit(){
+    document.getElementById("thumb").style.display = "block";
+}
+
+
+
+// now keyzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz i am kaqi i am surya sundar 
+
+
+
+// var object = null;
+
+
+// object = document.getElementById("lambo");
+
+// object.style.position = "relative";
+// object.style.right = "0";
+// object.style.top = "527px";
+
+
+
+
+document.onkeydown = function fun(e){
+console.log("Key code is :", e.keyCode);
+
+
+
+
+
+
+if (e.keyCode == 37 ){
+    object = document.querySelector(".lambo");
+
+// object.classList.add('lll');
+
+
+// setTimeout(() => {
+// object.classList.remove('lll');
+// },700);
+objectX = parseInt(window.getComputedStyle(object,null).getPropertyValue('right'))
+object.style.right = objectX + 15 + "px";
+object.style.transform = "scale(1 ,1)";
+
+
+}
+if (e.keyCode == 39 ){
+
+object = document.getElementById("lambo");
+objectX = parseInt(window.getComputedStyle(object,null).getPropertyValue('right'))
+object.style.right = objectX + -15 + "px";
+object.style.transform = "scale(-1 ,1)";
+
+
+}
+
+
+
+if (e.keyCode == 38 ){
+ object = document.querySelector(".lambo");
+
+object.classList.add('lll');
+
+
+
+setTimeout(() => {
+object.classList.remove('lll');
+},700);
+// objectX = parseInt(window.getComputedStyle(object,null).getPropertyValue('right'))
+// object.style.right = objectX + 15 + "px";
+// object.style.transform = "scale(1 ,1)";
+
+
+}
+}
+
+function car(){
+object1 = document.getElementById("lambo").classList.add("carani");
+
+setTimeout(() => {
+    object1 = document.getElementById("lambo").classList.remove("carani");
+}, 1000);
+
+}
+
+
+
+
+
+
+</script>
+
+
+</html>
